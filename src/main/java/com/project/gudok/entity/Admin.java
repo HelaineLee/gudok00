@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-public class MGR {
+public class Admin {
     @Id @Column(length = 20)
     private String adminId;
     @Column(nullable = false, length = 20)
@@ -17,8 +17,8 @@ public class MGR {
     @Column(length = 20)
     private String adminname;
     @Column(nullable = false, length = 5)
-    private int cnum;
-    @Column(length = 50)
+    private int memCode;
+    @Column(length = 100)
     private String adminemail;
 
 }

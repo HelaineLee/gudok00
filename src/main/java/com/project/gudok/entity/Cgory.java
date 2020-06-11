@@ -13,10 +13,9 @@ import javax.persistence.Id;
 public class Cgory {
 
     @Id
-    @Column
     private int cnum;
 
-    @Column
+    @Column(length = 50,nullable = false)
     private String cname;
 
 
