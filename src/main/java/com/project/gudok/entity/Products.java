@@ -6,56 +6,57 @@ import lombok.Setter;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 @Setter @Getter
 public class Products {
 
     @Id
-    @Column
-    private String p_id;
+    @Column(length = 50)
+    private String pId;
 
-    @Column
-    private String b_id;
+    @Column(length = 20, nullable = false)
+    private String bId;
 
-    @Column
-    private String pname;
+    @Column(length = 50, unique = true)
+    private String pName;
 
-    @Column
+    @Column(length = 10, nullable = false)
     private int price;
 
-    @Column
-    private String pstory;
+    @Column(length = 2000)
+    private String pStory;
 
-    @Column
-    private String prdate;
+    @Column(nullable = false)
+    private LocalDateTime pRDate;
 
-    @Column
+    @Column(length = 10, nullable = false)
     private int pcount;
 
     @Column
-    private String pddate;
+    private LocalDateTime pDDate;
 
-    @Column
-    private int pstatus;
+    @Column(length = 2, columnDefinition = "number(3) defalut 1")
+    private int pStatus;
 
-    @Column
-    private String deleteby;
+    @Column(length = 20)
+    private String deleteBy;
 
-    @Column
-    private String pimage1;
+    @Column(length = 500)
+    private String pImage1;
 
-    @Column
-    private String pimage2;
+    @Column(length = 500)
+    private String pImage2;
 
-    @Column
-    private String pimage3;
+    @Column(length = 500)
+    private String pImage3;
 
-    @Column
-    private int cnum;
+    @Column(length = 5)
+    private int cNum;
 
-    @Column
-    private String bname;
+    @Column(length = 50)
+    private String bName;
 
 
 
