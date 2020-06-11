@@ -3,41 +3,37 @@ package com.project.gudok.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Setter @Getter
 public class BQNA {
 
     @Id
-    @Column
-    private int bqna_no;
+    private long bqna_no;
 
-    @Column
-    private String b_id;
+    @Column(length = 20,nullable = false)
+    private String bId;
 
-    @Column
+    @Column(length = 200,nullable = false)
     private String bqna_title;
 
-    @Column
+    @Column(length = 2000,nullable = false)
     private String bqna_cont;
 
-    @Column
+    @Column(length = 2000)
     private String bqna_answer;
 
-    @Column
-    private String bqna_id;
-
-    @Column
+    @Column(length = 20)
     private String admin_id;
 
-    @Column
-    private String qdate;
+    @Column(length = 20)
+    private String cNum;
 
-    @Column
-    private String adate;
+    private LocalDateTime qdate;
+
+    private LocalDateTime adate;
 
 
 

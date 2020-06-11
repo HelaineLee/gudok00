@@ -19,20 +19,10 @@ public class Cart {
     private String pId;
     @Column(nullable = false, length = 2)
     private int quantity;
-    @Column(nullable = false, length = 10)
-    private int price;
     private LocalDateTime cdate;
     @Column(length = 2)
-    private int paymonth;
+    private Suboption suboption;
     @Column(length = 20)
-    private String bId;
-    @Column(length = 50)
-    private String bname;
-    @Column(length = 50)
-    private String pname;
-    @Column(length = 5)
-    private int cnum;
-    @Column(length = 5)
-    private int subperiod;
+    private Number subPeriod;
 
 }
