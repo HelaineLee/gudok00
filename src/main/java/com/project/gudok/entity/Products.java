@@ -3,10 +3,10 @@ package com.project.gudok.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Setter @Getter
@@ -16,8 +16,9 @@ public class Products {
     @Column(length = 50)
     private String pId;
 
-    @Column(length = 20, nullable = false)
-    private String bId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "b_id")
+    private BMember bmember;
 
     @Column(length = 50, unique = true)
     private String pName;
@@ -55,8 +56,13 @@ public class Products {
     @Column(length = 5)
     private int cNum;
 
-    @Column(length = 50)
-    private String bName;
+    @OneToMany(mappedBy = "suboption")
+    private List<Suboption> suboptions = new ArrayList<Suboption>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cnum")
+    private Cgory cgory;
+
 
 
 

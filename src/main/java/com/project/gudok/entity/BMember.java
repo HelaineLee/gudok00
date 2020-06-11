@@ -9,7 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity @Setter @Getter
 public class BMember {
@@ -40,4 +42,7 @@ public class BMember {
     private String BLogo;
     @Column(nullable = false)
     private BStatus BStatus;
+
+    @OneToMany(mappedBy = "products")
+    private List<Products> products = new ArrayList<Products>();
 }
