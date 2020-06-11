@@ -15,8 +15,6 @@ public class Cart {
     private Long cartnum;
     @Column(nullable = false, length = 20)
     private String sId;
-    @Column(nullable = false, length = 50)
-    private String pId;
     @Column(nullable = false, length = 2)
     private int quantity;
     private LocalDateTime cdate;
@@ -24,5 +22,8 @@ public class Cart {
     private Suboption suboption;
     @Column(length = 20)
     private Number subPeriod;
+    @ManyToOne
+    @JoinColumn(name = "p_id")
+    private Products products;
 
 }
