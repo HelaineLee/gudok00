@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,7 +18,8 @@ public class SubRecord {
     @Column(nullable = false, length = 20)
     private String sId;
     @Column(nullable = false, length = 50)
-    private String pId;
+    @ManyToMany
+    private List<Products> products = new ArrayList<>();
     @Column(nullable = false)
     private LocalDateTime subBegin;
     @Column(nullable = false, length = 3)

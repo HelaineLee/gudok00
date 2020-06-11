@@ -3,9 +3,7 @@ package com.project.gudok.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Setter @Getter
@@ -15,8 +13,9 @@ public class BQNA {
     @Column
     private int bqna_no;
 
-    @Column
-    private String b_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bId")
+    private BMember bmember;
 
     @Column
     private String bqna_title;
