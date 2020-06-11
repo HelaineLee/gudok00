@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +59,9 @@ public class Products {
 
     @OneToMany(mappedBy = "suboption")
     private List<Suboption> suboptions = new ArrayList<Suboption>();
+
+    @OneToMany(mappedBy = "cart")
+    private List<Cart> carts = new ArrayList<Cart>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cnum")
