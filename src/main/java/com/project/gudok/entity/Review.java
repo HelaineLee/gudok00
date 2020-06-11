@@ -3,9 +3,7 @@ package com.project.gudok.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -14,8 +12,8 @@ public class Review {
 
     @Id @Column(length = 10)
     private int revnum;
-
-    private String subrecord;   // subrecord 달면 오류 떠서 뺌
+    @OneToOne(fetch = FetchType.LAZY) @JoinColumn(name = "subnum")
+    private SubRecord subrecord;
 
     @Column(length = 2)
     private int score;

@@ -14,14 +14,14 @@ import java.util.List;
 @SequenceGenerator(name = "sr_gene", sequenceName = "sr_seq", initialValue = 1, allocationSize = 1)
 public class SubRecord {
 
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sr_gene")
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sr_gene") @Column(name = "subnum")
     private Long subnum;
-
     @Column(nullable = false, length = 20)
-    private String sId;
-    @Column(nullable = false, length = 50)
-    @ManyToMany
-    private List<Products> products = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "s_id")
+    private SMember smember;
+    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "p_id")
+    private Products products;
+
     @Column(nullable = false)
     private LocalDateTime subBegin;
     @Column(nullable = false, length = 3)
@@ -37,10 +37,10 @@ public class SubRecord {
     private String oId;
     @Column(length = 5)
     private int subprice;   // number(5)
-    @Column(length = 10, nullable = false)
-    private long dId;
+    @OneToOne(fetch = FetchType.LAZY) @JoinColumn(name = "d_id")
+    private Delivery delivery;
     @Column(length = 5, columnDefinition = "default 1")
     private int count;
-
-
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "subrecord")
+    private Review review;
 }
