@@ -1,5 +1,7 @@
 package com.project.gudok.service;
 
+import com.project.gudok.entity.Products;
+import com.project.gudok.repository.BmemberRepository;
 import com.project.gudok.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,16 @@ public class ProductService {
     @Autowired
     ProductsRepository PRepository;
 
-    // 상품등록신청 게시판 폼으로 이동.
+    @Autowired
+    BmemberRepository BMRepository;
+
+
+    // 상품 등록 신청
+    public void newPRequest(Products products){
+        PRepository.save(products);
+    }
+
+
 
 
 }

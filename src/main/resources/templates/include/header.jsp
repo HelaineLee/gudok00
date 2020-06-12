@@ -71,7 +71,7 @@
 		</div><br /><br />							
 		<div id="logo">		
 		  <form method="post" action="pSearch.do">											
-			<a href="./Smain.jsp">
+			<a href="../SecondPJ_JSP/Smain.jsp">
 				<img src="images/MGlogo.png" height="40" border="0">
 			</a>
 			<select name="find_field" id="search">
@@ -103,7 +103,7 @@
 		</div><br /><br />		
 		<div id="logo">
 		  <form method="post" action="pSearch.do">		  
-			<a href="./Bmain.jsp">
+			<a href="../SecondPJ_JSP/Bmain.jsp">
 				<img src="images/MGlogo.png" height="40" border="0">
 			</a>
 			<select name="find_field" id="search">
@@ -135,7 +135,7 @@
 		</div><br /><br />
 		<div id="logo">
 		  <form method="post" action="pSearch.do">			
-			<a href="./main.jsp">
+			<a href="../SecondPJ_JSP/main.jsp">
 				<img src="images/MGlogo.png" height="40" border="0">
 			</a>
 			<select name="find_field" id="search">
