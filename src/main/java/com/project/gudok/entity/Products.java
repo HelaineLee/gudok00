@@ -68,4 +68,7 @@ public class Products {
 
     @OneToMany(mappedBy = "products")
     private List<SubRecord> subRecords = new ArrayList<SubRecord>();
+
+    @Column(length = 20)
+    private PRSTATUS prstatus;
 }
