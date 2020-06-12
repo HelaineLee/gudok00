@@ -11,9 +11,9 @@ spring:
       ddl-auto: none
     properties:
       hibernate:
-        # JPA에서 발생하는 쿼리문을 콘솔창에 출력
-        show-sql: true
-        # SQL 문장에 가독성
+          #        # JPA에서 발생하는 쿼리문을 콘솔창에 출력
+        #        show-sql: true
+        #        # SQL 문장에 가독성
         # format_sql: true
 
   thymeleaf:
@@ -22,6 +22,8 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+
+
 
 logging.level:
   # JPA에서 발생하는 쿼리문을 로그파일로 남겨주는 옵션
