@@ -18,6 +18,10 @@ spring:
 
   thymeleaf:
     cache: false
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
 
 logging.level:
   # JPA에서 발생하는 쿼리문을 로그파일로 남겨주는 옵션
