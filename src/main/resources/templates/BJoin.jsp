@@ -1,0 +1,167 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>월간 구독</title>
+<style>
+	tr {
+		text-align:left;
+	}
+</style>
+<link rel="stylesheet" href="css/bootstrap_3-3-2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type ="text/javascript" src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src ="js/join.js"></script>
+<script>
+
+function lengthCheck(){
+	var textLength = $('#bstory').val().length;
+	var count = textLength;
+	$('.input-counter1').text(count);
+	if (count > 1000) {
+		$('#bstoryCheck').css("color","red");
+	}else if (count <= 1000){
+		$('#bstoryCheck').css("color","black");
+	}
+}; 	
+
+	$(function() {		
+		$("#emailSelect").change(function() {
+			var selectedValue = frm.emailSelect.selectedIndex;			
+			if(selectedValue!=5){
+			$("#email").val($(this).val());
+			$("#email").prop("readonly", true);
+			}else {				
+				$("#email").prop("readonly", false);
+				$("#email").val('').focus();
+			}
+		});
+	});
+
+</script>
+</head>
+<body>
+	<div align="center">
+	<br /><br />
+	<a href="main.do"><img alt="logo" src="images/MGlogo.png"></a>
+	<br /><br /><br />
+		<form name="frm" method="post" action="BJoin.do" onsubmit="return Btot_Check()">
+			<table>
+			  <tr>
+				<th>아이디</th>
+			  </tr>
+			  <tr>
+			    <td>
+				<input type="text" name="b_id" id ="b_id" onkeyup="bidCheck()"/> <br />
+				<span id="idcheck"></span></td>
+			  </tr>
+			  <tr>
+				<th>비밀번호</th>
+			  </tr>
+			  <tr>
+				<td>
+				  <input type="password" name="bpwd1" id="pwd1" onkeyup="pwdCheck()"/>
+				</td>
+			  </tr>
+			  <tr>
+			    <th>비밀번호 확인</th>
+			  </tr>
+			  <tr>
+				<td><input type="password" name="bpwd2" id="pwd2" onkeyup="pwdCheck()" /><br />
+				<span id="pwdCheck"></span></td>
+			  </tr>
+			  <tr>
+				<th>브랜드 이름</th>
+			  </tr>
+			  <tr>
+			    <td>
+				  <input type="text" name="bname" id="bname" onkeyup="bnameCheck()"/><br />
+				  <span id="nameCheck"></span>
+				</td>
+			  </tr>
+			  <tr>
+				<th>대표 이름</th>
+			  </tr>
+			  <tr>
+				<td><input type="text" name="bceo" id="bceo"/></td>
+			 </tr>
+			 <tr>	
+			   <th>브랜드 소개</th>
+			 </tr>
+			 <tr>
+			   <td>
+				<textarea id="bstory" name="bstory" cols="50" rows="20" onkeyup="lengthCheck()"></textarea><br />
+				<font size="2pt" id="bstorycolor"><span id="bstoryCheck"class="input-counter1">0</span>/1000 </font><br /><br />
+			   </td>
+			 </tr>
+			 <tr>
+			  <th>사업자 전화번호</th>
+			 </tr>
+			 <tr><td>
+				<select name="bphone1">
+					<option value="">선택</option>
+					<option value="010">010</option>
+					<option value="070">070</option>
+					<option value="02">02</option>
+					<option value="031">031</option>
+					<option value="032">032</option>
+					<option value="033">033</option>
+					<option value="041">041</option>
+					<option value="042">042</option>
+					<option value="043">043</option>
+					<option value="044">044</option>
+					<option value="051">051</option>
+					<option value="052">052</option>
+					<option value="053">053</option>
+					<option value="054">054</option>
+					<option value="055">055</option>
+					<option value="061">061</option>
+					<option value="062">062</option>
+					<option value="063">063</option>
+					<option value="064">064</option>
+				</select>
+				- <input size="4" type="text" name="bphone2" /> 
+				- <input size="4" type="text" name="bphone3" /><br /><br />
+			 </td></tr>
+			 <tr>	
+			  <th>사업장 주소</th>
+			 </tr>
+			 <tr>
+				<td><input type="text" name="badd1" /></td>
+			 </tr>
+			 <tr>
+			   <th>이메일</th>
+			 </tr>
+			 <tr>
+			   <td>
+			   		<input type="text" name="email1" />@
+					<input type="text" name="email2" id="email" />
+					<select id="emailSelect" name="emailSelect">
+						<option value="">선택</option>
+						<option value="naver.com" id="naver">naver.com</option>
+						<option value="gmail.com" id="gmail">gmail.com</option>
+						<option value="hanmail.net" id="hanmail">hanmail.net</option>
+						<option value="nate.com" id="nate">nate.com</option>
+						<option value="" id="write">직접입력</option>						
+				</select>
+			   </td>
+			 </tr>
+			 <tr>
+			   <td align="center">
+			   <br />
+				<input type="checkbox" name="terms"/><a onclick="terms_check()" >이용약관 동의</a><br />
+			   </td>
+			 </tr>			
+			</table>
+			<hr width="50%" color="#E4F7BA"/>
+			<br />
+			<input type="submit" value="회원가입" />
+			<input type="reset" value="다시 작성" />
+			<input type="button" value="취소" onclick="location.href='main.jsp'"/>			
+		</form>
+		</div>
+</body>
+</html>
