@@ -17,6 +17,10 @@ public class Suboption {
     @JoinColumn(name = "p_id")
     private Products products;
 
+    @ManyToOne
+    @JoinColumn(name = "cnum")
+    private Cart cart;
+
     @Column(length = 5)
     private int subcount;
     @Column(length = 3)
