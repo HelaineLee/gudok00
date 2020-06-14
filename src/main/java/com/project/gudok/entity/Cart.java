@@ -21,7 +21,7 @@ public class Cart {
     @Column(length = 2)
     private Suboption suboption;
     @Column(length = 20)
-    private Number subPeriod;
+    private int subPeriod;
     @ManyToOne
     @JoinColumn(name = "p_id")
     private Products products;
