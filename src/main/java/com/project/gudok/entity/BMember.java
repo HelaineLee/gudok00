@@ -36,8 +36,8 @@ public class BMember {
     private LocalDateTime bJdDate;
     @Column(nullable = false)
     private LocalDateTime bWDate;
-    @Column(length = 5,nullable = false)
-    private int memCode = 2;
+    @Column(length = 5,nullable = false, columnDefinition = "default 2")
+    private int memCode;
     @Column(length = 1000)
     private String BLogo;
     @Column(nullable = false)

@@ -33,7 +33,7 @@ public class SMember {
     private LocalDateTime sWDate;
     @Column(length = 20)
     private String RMember;
-    @Column(length = 10, nullable = false)
+    @Column(length = 10, nullable = false, columnDefinition = "default 500")    // 가입 시 500 지급
     private int SPoint;
     @Column(length = 200, nullable = false)
     private String sAddr;

@@ -8,10 +8,11 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity @Getter @Setter
+@SequenceGenerator(name = "rev_gene", sequenceName = "rev_seq", initialValue = 1, allocationSize = 1)
 public class Review {
 
-    @Id @Column(length = 10)
-    private int revnum;
+    @Id @Column(length = 10) @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rev_gene")
+    private Long revnum;
     @OneToOne(fetch = FetchType.LAZY) @JoinColumn(name = "subnum")
     private SubRecord subrecord;
 
@@ -35,10 +36,10 @@ public class Review {
 
     private LocalDateTime rDate;
 
-    @Column(length = 2, columnDefinition = "number(3) default 0")
+    @Column(length = 2, columnDefinition = "default 0")
     private int delStatus;
 
-    @Column(length = 2)
+    @Column(length = 500)
     private String dReason;
 
     private LocalDateTime dQDate;

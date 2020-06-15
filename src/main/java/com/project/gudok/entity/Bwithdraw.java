@@ -15,7 +15,7 @@ public class Bwithdraw {
     private String reason;
     @Column(nullable = false)
     private LocalDateTime regdate;
-    @Column(length = 2)
-    private int complete=1;
+    @Column(length = 2, columnDefinition = "default 1")
+    private int complete;
 
 }

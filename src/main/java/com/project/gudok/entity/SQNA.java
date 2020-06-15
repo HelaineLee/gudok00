@@ -1,16 +1,20 @@
 package com.project.gudok.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
+@SequenceGenerator(name = "sq_gene", sequenceName = "sq_seq", initialValue = 1, allocationSize = 1)
 public class SQNA {
 
-    @Id @Column(length = 10)
-    private int sqnaNo;
+    @Id @Column(length = 10) @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_gene")
+    private Long sqnaNo;
 
     @Column(length = 20, nullable = false)
     private String userId;

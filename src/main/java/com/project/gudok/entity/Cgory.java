@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 public class Cgory {
 
-    @Id
+    @Id @Column(length = 5)
     private int cnum;
 
     @Column(length = 50,nullable = false)

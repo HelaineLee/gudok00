@@ -8,10 +8,11 @@ import java.time.LocalDateTime;
 
 @Entity
 @Setter @Getter
+@SequenceGenerator(name = "bq_gene", sequenceName = "bq_seq", initialValue = 1, allocationSize = 1)
 public class BQNA {
 
-    @Id
-    private long bqnaNo;
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bq_gene")
+    private Long bqnaNo;
 
     @Column(length = 20,nullable = false)
     private String bId;

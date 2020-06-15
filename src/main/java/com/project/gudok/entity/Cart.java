@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,8 +21,8 @@ public class Cart {
     private int quantity;
     private LocalDateTime cdate;
 
-
-    private Suboption suboption;
+    @OneToMany(mappedBy = "cart")
+    private List<Suboption> suboptions = new ArrayList<Suboption>();
 
     @Column(length = 20)
     private int subPeriod;

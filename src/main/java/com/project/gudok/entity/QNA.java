@@ -3,18 +3,17 @@ package com.project.gudok.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Setter @Getter
+@SequenceGenerator(name = "qna_gene", sequenceName = "qna_seq", initialValue = 1, allocationSize = 1)
 public class QNA {
 
-    @Id @Column(length = 10)
-    private int qnum;
+    @Id @Column(length = 10) @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "qna_gene")
+    private Long qnum;
 
     @Column(length = 20, nullable = false)
     private String sId;
@@ -23,7 +22,7 @@ public class QNA {
     private String bId;
 
     @Column(length = 20)
-    private int subnum;
+    private Long subnum;
 
     @Column(length = 20, nullable = false)
     private int cNum;

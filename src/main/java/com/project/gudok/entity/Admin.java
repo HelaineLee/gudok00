@@ -16,7 +16,7 @@ public class Admin {
     private String adminpwd;
     @Column(length = 20)
     private String adminname;
-    @Column(nullable = false, length = 5)
+    @Column(nullable = false, length = 5, columnDefinition = "default 3")
     private int memCode;
     @Column(length = 100)
     private String adminemail;
