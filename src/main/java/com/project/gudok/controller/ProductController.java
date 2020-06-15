@@ -1,5 +1,6 @@
 package com.project.gudok.controller;
 
+import com.project.gudok.entity.Products;
 import com.project.gudok.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ public class ProductController {
 
     @GetMapping("/newProducts/form")
     public String newPForm(Model model){
-        model.addAttribute("newPForm", new );
+        model.addAttribute("newPForm", new Products());
         return "items/createItemForm";
     }
 

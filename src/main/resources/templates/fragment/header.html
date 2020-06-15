@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <div class="header" th:fragment="header">
+        <div id="top_login" align="right">
+            <a href="<%=request.getContextPath() %>/gotologin.do">${sname }님</a>&nbsp;&nbsp;
+            <a href="<%=request.getContextPath() %>/logout.do">로그아웃</a>&nbsp;&nbsp;
+            <a href="<%=request.getContextPath() %>/faq_list.do">고객센터</a>
+        </div><br /><br />
+        <div id="logo">
+            <form method="post" action="pSearch.do">
+                <a href="../SecondPJ_JSP/Smain.jsp">
+                    <img src="../images/MGlogo.png" height="40" border="0">
+                </a>
+                <select name="find_field" id="search">
+                    <option value="pname">상품명</option>
+                    <option value="bname">판매자명</option>
+                </select>
+                <input type="text" name="find_name" class="box"/>
+                <input type="submit" value="검색" class="bt"/>
+                <img src="../images/category.PNG" width="50px" class="navi" onclick="showDiv2()"/> &nbsp; &nbsp; &nbsp; &nbsp;
+                <p class="category" style="display: none">
+                    <a href="hr_cgory.do?cnum=10"> 핸드폰 </a> &nbsp; &nbsp; &nbsp;
+                    &nbsp; <a href="hr_cgory.do?cnum=11"> 꽃다발 </a> &nbsp; &nbsp;
+                    &nbsp; &nbsp; <a href="hr_cgory.do?cnum=12"> 여성용품 </a> &nbsp;
+                    &nbsp; &nbsp; &nbsp; <a href="hr_cgory.do?cnum=13"> 화장품 </a>
+                    &nbsp; &nbsp; &nbsp; &nbsp; <a href="hr_cgory.do?cnum=14"> 패션
+                </a></p>
+            </form>
+        </div>
+    </div>
+<br /><br />

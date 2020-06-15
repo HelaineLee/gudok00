@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment.header :: header">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>월간 구독</title>
+</head>
+<body>
+
+<div align="center" class="content">
+    <h3>메인페이지</h3>
+   <!-- <%@ include file="../include/header.jsp" %>
+    <%@ include file="../include/Carousel.jsp" %><br/><br/><br/>
+    <h3><strong>새로 들어온 상품</strong></h3>
+    <br /><br />
+    <table cellspacing="20px" id="tb">
+        <tr align="center">
+            <%for(int i=0; i<4; i++) {
+            ProductsDTO dto = list.get(i); %>
+            <td>
+                <a href="pCont.do?no=<%=dto.getP_id()%>"><img src="./images/<%=dto.getPimage() %>" width="200"></a>
+            </td>
+            <%}%>
+        </tr>
+        <tr align="center">
+            <%for(int i=0; i<4; i++) {
+            ProductsDTO dto = list.get(i); %>
+            <td>
+                <br />
+                <hr color="#E4F7BA"/>
+                <a href="pCont.do?no=<%=dto.getP_id()%>"><%=dto.getPname() %> / <%=dto.getBname() %></a>
+                <hr color="#E4F7BA"/>
+                <br /><br />
+            </td>
+            <%}%>
+        </tr>
+        <tr align="center">
+            <%for(int i=4; i<list.size(); i++) {
+            ProductsDTO dto = list.get(i); %>
+            <td>
+                <a href="pCont.do?no=<%=dto.getP_id()%>"><img src="./images/<%=dto.getPimage() %>" width="200"></a>
+            </td>
+            <%}%>
+        </tr>
+        <tr align="center">
+            <%for(int i=4; i<list.size(); i++) {
+            ProductsDTO dto = list.get(i); %>
+            <td>
+                <hr color="#E4F7BA"/>
+                <a href="pCont.do?no=<%=dto.getP_id()%>"><%=dto.getPname() %> / <%=dto.getBname() %></a>
+                <hr color="#E4F7BA"/>
+            </td>
+            <%}%>
+        </tr>
+    </table>
+</div>
+<%@ include file="../include/footer.jsp" %>-->
+</div>
+
+</body>
+</html>

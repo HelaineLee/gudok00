@@ -38,7 +38,7 @@ public class Products {
     @Column
     private LocalDateTime pDDate;
 
-    @Column(length = 2, columnDefinition = "number(3) defalut 1")
+    @Column(length = 2, columnDefinition = "number(3) default 1")
     private int pStatus;
 
     @Column(length = 20)

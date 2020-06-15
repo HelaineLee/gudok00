@@ -1,6 +1,7 @@
 package com.project.gudok.repository;
 
 import com.project.gudok.entity.BMember;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
