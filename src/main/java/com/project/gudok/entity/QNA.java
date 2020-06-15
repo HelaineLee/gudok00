@@ -25,7 +25,7 @@ public class QNA {
     private Long subnum;
 
     @Column(length = 20, nullable = false)
-    private int cNum;
+    private String cNum;
 
     @Column(length = 1000, nullable = false)
     private String qCont;
@@ -39,6 +39,10 @@ public class QNA {
 
     @Column(length = 200)
     private String qTitle;
+
+    // repository를 사용하지 않는 메서드
+    // 핵심적으로 중요한 멤버가 있는 곳에 설정하면 좋은 메서드 : 연관관계 편의 메서드.
+    // 양방향에 적용해야 하는 경우에 사용하면 좋음.
 
 
 
