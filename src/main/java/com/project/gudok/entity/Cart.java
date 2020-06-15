@@ -18,10 +18,12 @@ public class Cart {
     @Column(nullable = false, length = 2)
     private int quantity;
     private LocalDateTime cdate;
-    @Column(length = 2)
+
+
     private Suboption suboption;
+
     @Column(length = 20)
-    private Number subPeriod;
+    private int subPeriod;
     @ManyToOne
     @JoinColumn(name = "p_id")
     private Products products;

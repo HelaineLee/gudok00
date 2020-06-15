@@ -11,22 +11,22 @@ import java.time.LocalDateTime;
 public class BQNA {
 
     @Id
-    private long bqna_no;
+    private long bqnaNo;
 
     @Column(length = 20,nullable = false)
     private String bId;
 
     @Column(length = 200,nullable = false)
-    private String bqna_title;
+    private String bqnaTitle;
 
     @Column(length = 2000,nullable = false)
-    private String bqna_cont;
+    private String bqnaCont;
 
     @Column(length = 2000)
-    private String bqna_answer;
+    private String bqnaAnswer;
 
     @Column(length = 20)
-    private String admin_id;
+    private String adminId;
 
     @Column(length = 20)
     private String cNum;

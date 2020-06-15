@@ -28,7 +28,7 @@ public class Review {
     private String rTitle;
 
     @Column(length = 20, nullable = false)
-    private long subNum;
+    private Long subNum;
 
     @Column(length = 500)
     private String refile;

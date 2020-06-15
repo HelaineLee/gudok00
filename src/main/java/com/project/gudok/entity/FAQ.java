@@ -13,7 +13,7 @@ import java.util.Date;
 public class FAQ {
 
     @Id
-    private int fasqnum;
+    private int faqnum;
     @Column(length = 100, nullable = false)
     private String faqQ;
     @Column(length = 1000, nullable = false)

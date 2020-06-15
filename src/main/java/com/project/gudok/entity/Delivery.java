@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Delivery {
 
     @Id @Column(name = "d_id")
-    private long dId;
+    private Long dId;
     private String dAddr;
     private DStatus dStatus;
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "delivery")
