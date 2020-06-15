@@ -11,10 +11,4 @@ public class HomeController {
         return "main";
     }
 
-    @GetMapping("/hello")
-    public String hello() {
-
-        return "hello";
-    }
-
 }
