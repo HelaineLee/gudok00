@@ -32,4 +32,4 @@ logging.level:
   org.hibernate.type: trace
 
 server:
-  port: 8585
+  port: 7575
